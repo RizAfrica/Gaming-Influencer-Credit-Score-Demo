@@ -87,7 +87,7 @@ with st.expander("About this engine", expanded=False):
         **Premise:** how a person plays games reveals psychometric traits relevant
         to financial behavior.
 
-        **What you input:** raw game history (one row per game).
+        **What you input:** Chess raw game history (one row per game).
 
         **What happens behind the scenes:** Behavioral features are computed
         automatically from your input (engagement intensity, clock management,
