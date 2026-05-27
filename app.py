@@ -153,11 +153,9 @@ def render_top_factors(result):
         if pts >= 0:
             sign = "+"
             bar_color = "#5ba85b"
-            tag = "boosts score"
         else:
             sign = ""
             bar_color = "#d96c4a"
-            tag = "lowers score"
 
         magnitude = min(abs(pts) / 50.0, 1.0)
         bar_width = int(magnitude * 100)
@@ -177,11 +175,7 @@ def render_top_factors(result):
                         {sign}{pts:.0f} pts
                     </div>
                 </div>
-                <div style="margin-top: 6px; color: #555; font-size: 12px;">
-                    Score: <b>{factor['value']}</b>.
-                    {tag}.
-                </div>
-                <div style="margin-top: 8px; height: 5px; background: #e0e0e0;
+                <div style="margin-top: 10px; height: 5px; background: #e0e0e0;
                             border-radius: 3px;">
                     <div style="width: {bar_width}%; height: 100%;
                                 background: {bar_color}; border-radius: 3px;">
