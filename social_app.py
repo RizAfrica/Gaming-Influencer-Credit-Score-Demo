@@ -21,6 +21,38 @@ st.set_page_config(
     layout="wide",
 )
 
+# ============================================================
+# Background image setup
+# ============================================================
+def set_background(image_path):
+    """Apply a background image with a light overlay so text stays readable."""
+    if not os.path.exists(image_path):
+        return
+    with open(image_path, "rb") as f:
+        encoded = base64.b64encode(f.read()).decode()
+
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.88),
+                                rgba(255, 255, 255, 0.88)),
+                url("data:image/png;base64,{encoded}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }}
+        .stApp > header {{
+            background: transparent;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+set_background("artifacts/social_media.png")
 
 # ============================================================
 # Cached resources
