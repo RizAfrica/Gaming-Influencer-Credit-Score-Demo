@@ -22,6 +22,14 @@ st.set_page_config(
 )
 
 # ============================================================
+# Logo
+# ============================================================
+LOGO_PATH = "artifacts/riz africa logo_main colors.svg"
+
+if os.path.exists(LOGO_PATH):
+    st.logo(LOGO_PATH, size="large")
+
+# ============================================================
 # Background image setup
 # ============================================================
 def set_background(image_path):
